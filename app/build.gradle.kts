@@ -85,6 +85,16 @@ android {
                 mappingFileUploadEnabled = false
             }
         }
+        create("selfUse") {
+            isMinifyEnabled = false
+            proguardFiles(
+                getDefaultProguardFile("proguard-android-optimize.txt"),
+                "proguard-rules.pro"
+            )
+            configure<CrashlyticsExtension> {
+                mappingFileUploadEnabled = false
+            }
+        }
         create("r8Test") {
             isMinifyEnabled = true
             proguardFiles(
